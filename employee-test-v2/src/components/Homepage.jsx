@@ -17,7 +17,7 @@ const Homepage = (() => {
     }
 
     getAllEmployees();
-  })
+  },[]);
 
   const filteredEmployees = allEmployees.filter((employee) => employee.name.includes(searchTerm));
 
@@ -35,6 +35,7 @@ const Homepage = (() => {
       })
     });
     const res = await response.json();
+    console.log(res);
   }
 
   return (
@@ -42,7 +43,7 @@ const Homepage = (() => {
     <input placeholder='search by name' type="text" value={searchTerm}
         onChange={(event)=>{setAllSearchTerm(event.target.value)}}/>
 
-        {
+        {filteredEmployees && (
           filteredEmployees.map((eachEmployee) => {
             return (
 
@@ -54,7 +55,7 @@ const Homepage = (() => {
               
 
             )
-          })
+          }))
 
 
         }
