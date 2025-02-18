@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require(`express`);
 const employees = require("./db/employees.cjs");
 let idNumber = 13;
@@ -5,7 +6,9 @@ const path = require('path');
 
 console.log(employees);
 
+
 const app = express();
+app.use(cors({origin:["http://localhost:5173"]}))
 
 // no need to run the route every time
 app.use(express.json());
@@ -52,7 +55,8 @@ app.post(`/employees/post`, (req, res, next) => {
     employees.push({
       id: idNumber,
       name
-    });
+    }); 
+    console.log(employees);
 
     idNumber++;
     res.send(employees);
