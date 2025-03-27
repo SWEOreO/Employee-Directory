@@ -1,5 +1,7 @@
 # Employee Directory v2
 
+## Practice - Express & SQL: CRUD
+
 ## Overview
 The **Employee Directory v2** project enhances the previous employee-management API by incorporating middleware, structuring endpoints into routers, and introducing a basic front-end. The project is also deployed using **Render** for a full-stack experience.
 
